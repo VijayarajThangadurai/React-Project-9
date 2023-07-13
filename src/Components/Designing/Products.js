@@ -1,11 +1,14 @@
-import {Row,Col, Card, Container, CardImg, Button } from "react-bootstrap"
+import { Card } from "react-bootstrap";
+// import CartProvider from "../store/CartProvider";
+// import ProductForm from "./ProductForm";
+import ProductItem from "./ProductItem";
 const productsArr = [
 
     {
 
     title: 'Colors',
 
-    price: 100,
+    price: "$100",
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
 
@@ -15,7 +18,7 @@ const productsArr = [
 
     title: 'Black and white Colors',
 
-    price: 50,
+    price: "$50",
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
 
@@ -25,7 +28,7 @@ const productsArr = [
 
     title: 'Yellow and Black Colors',
 
-    price: 70,
+    price: "$70",
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
 
@@ -35,30 +38,24 @@ const productsArr = [
 
     title: 'Blue Color',
 
-    price: 100,
+    price: "$100",
 
     imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
 
     }
 
-    ]
+    ];
 
-const Products =()=>{
-    const productsList=productsArr.map((product)=>(
-        <Container>
-    <Row className="mt-4">
-        <Col xs={3}>
+const Products =(props)=>{
+    const productsList=productsArr.map((productss)=>(
+    
         <Card >
-            <CardImg top width="100%" src="https://prasadyash2411.github.io/ecom-website/img/Album%204.png"></CardImg>
-            <Card.Body className="mr-50">
-                {product.title}
-                {product.price}
-                <Button className="sm-19">AddCart</Button>
-            </Card.Body>
+            <ProductItem
+              imageUrl={productss.imageUrl}
+              product={productss.product}
+              price={productss.price}
+            />
         </Card>
-        </Col>
-    </Row>
-    </Container>
     ))
 return (
     <>
